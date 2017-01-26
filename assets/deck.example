@@ -1,0 +1,25 @@
+var checkSendMessageFromAgent = function (nextCheck, lastResult) {
+
+    var sessionId = lastResult.sessionId;
+    var message = 'Hello, I\'m fine.';
+
+    output.writeLog('Entering into checkSendMessageFromAgent');
+
+    checkSendMessageFromAgentRecoverTimeout = setInterval(function () {
+
+        fakecustomer.customerEvents.on('chatSessionRecovered', function (msg) {
+
+            fakecustomer.customerEvents.removeAllListeners('chatSessionRecovered');
+
+            if (msg.conversations && msg.conversations.items && msg.conversations.items.length == 2) {
+                fakecustomer.customerEvents.emit('messageReceived', msg.conversations.items[1]);
+            } else {
+                fakecustomer.endChatSession(sessionId);
+                output.returnFalse({message: 'checkSendMessageFromAgent failed'});
+            }
+        });
+
+        fakecustomer.recoverSessionIfAny();
+        clearInterval(checkSendMessageFromAgentRecoverTimeout);
+    }, 10000);
+}

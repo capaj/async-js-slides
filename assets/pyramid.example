@@ -1,0 +1,23 @@
+checkOfflineState(function (lastResult) {
+
+    checkOnlineState(function (lastResult) {
+
+        checkStartChatSession(function (lastResult) {
+
+            checkSendMessageFromCustomer(function (lastResult) {
+
+                checkSendMessageFromAgent(function (lastResult) {
+
+                    checkCloseChatByCustomer(function (lastResult) {
+                        fakeagent.stopAgentWork();
+                        output.returnTrue();
+                    }, lastResult);
+
+                }, lastResult);
+
+            }, lastResult);
+
+        }, lastResult);
+
+    }, lastResult);
+});
