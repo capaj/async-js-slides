@@ -1,0 +1,4 @@
+co.wrap(function* () {}) === async function() {}
+
+await a + await b === (await a) + (await b)
+yield a + yield b === yield (a + (yield b))

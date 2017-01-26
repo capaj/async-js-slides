@@ -1,0 +1,11 @@
+ajax.post(['post', 'detail', 'conversation'], {
+
+});
+
+ajax.once(ajax.ON_SUCCESS, (data) => {
+   
+});
+
+ajax.once(ajax.ON_ERROR, () => {
+    
+});

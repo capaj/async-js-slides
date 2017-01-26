@@ -64,29 +64,49 @@ export default class Presentation extends React.Component {
             <Text textSize="1.5em" margin="20px 0px 0px" bold>at brand embassy</Text>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} textColor="secondary">
+              Our codebase
+            </Heading>
+            <Image src={"https://i.imgflip.com/1idvhm.jpg"}/>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
               lang="javascript"
               source={require("raw!../assets/deck.example")}
             />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} textColor="secondary">
+              Chat e2e tests
+            </Heading>
             <CodePane
               lang="javascript"
               source={require("raw!../assets/pyramid.example")}
             />
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+            <Heading size={4} textColor="secondary">
+              Chat e2e tests in the future
+            </Heading>
+            <CodePane
+              lang="javascript"
+              source={require("raw!../assets/await.example")}
+              />
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
               Async vs generators
             </Heading>
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <Appear><ListItem>no need for 3rd party lib to wrap generators for async</ListItem></Appear>
+              <Appear><ListItem>operator precedence</ListItem></Appear>
             </List>
+            <CodePane
+              lang="javascript"
+              source={
+                require("raw!../assets/operator.example")
+              }
+              />
           </Slide>
           <Slide bgColor="secondary" textColor="primary">
             <Heading size={1} caps fit textColor="primary">
@@ -118,6 +138,11 @@ export default class Presentation extends React.Component {
             <Appear fid="1">
               <Heading size={1} caps fit textColor="primary">
                 Questions?
+              </Heading>
+            </Appear>
+            <Appear fid="2">
+              <Heading size={1} textColor="tertiary">
+                Thanks for your attention.
               </Heading>
             </Appear>
           </Slide>
